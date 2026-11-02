@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Records</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f4f8;
+            text-align: center;
+            padding: 40px;
+        }
+
+        table {
+            margin: auto;
+            width: 70%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 14px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #315de7;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Student Records Application</h1>
+    <h3>Flask + SQLite Database</h3>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Marks</th>
+        </tr>
+
+        {% for student in students %}
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.branch }}</td>
+            <td>{{ student.marks }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
